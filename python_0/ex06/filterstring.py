@@ -15,7 +15,7 @@ def main():
     args = sys.argv
     try:
         assert len(args) == 3, "Program must take 2 arguments"
-        assert (x.isalnum() or x.isspace() for x in args[1]), (
+        assert all(x.isalnum() or x.isspace() for x in args[1]), (
             "Program 1st arg must be alpha numerical")
         assert args[2].isdigit(), "Program 2nd arg must be an int"
     except AssertionError as error:
